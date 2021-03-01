@@ -1,5 +1,14 @@
 <h1>TO DO LISTS</h1>
 <br><br><br>
+<form method="POST" action="/">
+    {% csrf_token %}
+    {{ form.title }}
+    <input type="submit" name="CreateTasks">
+</form>
+
 {% for x in tasks %}
-    <h2>{{x}}</h2>
+    <div>
+        <a href="{% url 'update_task' x.id%}">update</a>
+        <p>{{x}}</p>
+    </div>
 {% endfor %}
