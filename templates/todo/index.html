@@ -9,6 +9,7 @@
 {% for x in tasks %}
     <div>
         <a href="{% url 'update_task' x.id%}">update</a>
+        <a href="{% url 'delete_task' x.id%}">Delete</a>
         <p>{{x}}</p>
     </div>
 {% endfor %}
